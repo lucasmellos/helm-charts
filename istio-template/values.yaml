@@ -1,0 +1,53 @@
+hosts:
+  - mydns.com
+
+protocols:
+  http:
+    enabled: true
+    port: 80
+    httpsRedirect: true
+
+  https:
+    enabled: true
+    port: 443
+
+tls:
+  enabled: true
+  mode: SIMPLE
+  dnsNames: 
+  - mydns.com
+  issuerName: "letsencrypt-prod-cluster"
+
+destionationrule:
+  enabled: false
+
+virtualservice:
+  enabled: true
+
+
+gateway:
+  enabled: true
+
+virtualservice:
+  enabled: true
+  namespace: "l1-web-deptrack"
+
+  http:
+  - match:
+      - uri:
+          prefix: /api
+    route:
+      - destination:
+          host: apiserver
+          port:
+            number: 80
+  - match:
+      - uri:
+          prefix: /
+    route:
+      - destination:
+          host: frontend
+          port:
+            number: 80
+    
+  tls: {}

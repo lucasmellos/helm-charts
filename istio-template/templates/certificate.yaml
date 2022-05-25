@@ -1,0 +1,29 @@
+{{- if .Values.tls.enabled }}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ .Release.Name }}-tls
+  namespace: istio-system
+  labels:
+    {{- include "istio-template.labels" . | nindent 4 }}
+spec:
+  secretName: {{ .Release.Name }}-tls
+  duration: {{ .Values.tls.expiration }} 
+  renewBefore: {{ .Values.tls.renewBefore }} 
+  isCA: false
+  privateKey:
+    algorithm: RSA
+    encoding: PKCS1
+    size: 2048
+  usages:
+    - server auth
+    - client auth
+  dnsNames:
+  {{- range .Values.tls.dnsNames }}
+    - {{ . -}}
+  {{ end }}
+  issuerRef:
+    name: {{ .Values.tls.issuerName }}
+    kind: ClusterIssuer
+    group: cert-manager.io
+{{- end }}

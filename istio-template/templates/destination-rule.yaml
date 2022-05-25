@@ -1,0 +1,14 @@
+{{- if .Values.destionationrule.enabled }}
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: {{ include "istio-template.fullname" . }}-dr
+  labels:
+    {{- include "istio-template.labels" . | nindent 4 }}
+spec:
+  host: "{{ .Release.Name }}-mysql.{{ .Release.Namespace }}.svc.cluster.local"
+  trafficPolicy:
+    tls:
+      mode: DISABLE
+
+{{- end }}

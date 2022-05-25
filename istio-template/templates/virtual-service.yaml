@@ -1,0 +1,20 @@
+{{- if .Values.virtualservice.enabled }}
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ .Release.Name }}-vs
+  namespace: {{ .Values.virtualservice.namespace }}
+spec:
+  hosts:
+  {{- range .Values.hosts }}
+    - {{ . -}}
+  {{ end }}
+  gateways:
+    - istio-system/{{ .Release.Name }}-gw
+  {{ with .Values.virtualservice.http }}
+  http: {{-  toYaml . | nindent 3 }} 
+  {{- end }}
+  {{ with .Values.virtualservice.tls }}   
+  tls: {{-  toYaml . | nindent 3 }}
+  {{- end }}
+{{- end }}

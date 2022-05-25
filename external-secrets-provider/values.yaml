@@ -1,0 +1,7 @@
+
+vault:
+  server: 
+  path:
+  tokenSecretRef:
+    name:
+    key:
