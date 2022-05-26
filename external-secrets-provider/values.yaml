@@ -1,7 +1,17 @@
+secretStore:
+  enabled: 
+  vault:
+    server: 
+    path:
+    tokenSecretRef:
+      name:
+      key:
 
-vault:
-  server: 
-  path:
-  tokenSecretRef:
-    name:
-    key:
+externalSecret:
+  enabled:
+  name:
+  refreshInterval: "1m"
+  secretStoreName:
+  targetName:
+  remotePath:
+  remoteValue:
