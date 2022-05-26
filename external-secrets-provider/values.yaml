@@ -1,17 +1,17 @@
 secretStore:
-  enabled: 
+  enabled: false
   vault:
-    server: 
+    server: "https://vault.com:8200"
     path:
     tokenSecretRef:
-      name:
-      key:
+      name: "vault-token"
+      key: "token"
 
 externalSecret:
-  enabled:
-  name:
+  enabled: false
+  name: ""
   refreshInterval: "1m"
-  secretStoreName:
-  targetName:
-  remotePath:
-  remoteValue:
+  secretStoreName: ""
+  targetName: ""
+  data: {}
+  data: {}
