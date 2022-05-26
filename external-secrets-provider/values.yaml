@@ -8,10 +8,23 @@ secretStore:
       key: "token"
 
 externalSecret:
-  enabled: false
+  enabled: true
   name: ""
   refreshInterval: "1m"
   secretStoreName: ""
   targetName: ""
   data: {}
-  data: {}
+  
+  dataFrom: 
+  - extract:
+      key: provider-key
+      version: provider-key-version
+      property: provider-key-property
+      conversionStrategy: Default
+  - find:
+      path: path-to-filter
+      name:
+        regexp: ".*foobar.*"
+      tags:
+        foo: bar
+      conversionStrategy: Unicode
