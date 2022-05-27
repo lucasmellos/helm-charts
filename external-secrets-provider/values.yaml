@@ -1,5 +1,6 @@
 secretStore:
   enabled: false
+  kind: "ClusterSecretStore"
   vault:
     server: "https://vault.com:8200"
     path:
@@ -9,22 +10,19 @@ secretStore:
 
 externalSecret:
   enabled: true
-  name: ""
+  name: "aws-credentials"
   refreshInterval: "1m"
-  secretStoreName: ""
-  targetName: ""
-  data: {}
-  
-  dataFrom: 
-  - extract:
-      key: provider-key
-      version: provider-key-version
-      property: provider-key-property
-      conversionStrategy: Default
-  - find:
-      path: path-to-filter
-      name:
-        regexp: ".*foobar.*"
-      tags:
-        foo: bar
-      conversionStrategy: Unicode
+  secretStoreName: "vault-externalsecrets-provider-backend"
+  targetName: "aws-credentials"
+  remotePath: "secret/aws-s3-backup"
+  remoteValue: "credentials"
+  dataFrom: {}
+  data: 
+  - secretKey: accessKey
+    remoteRef:
+      key: secret/aws-s3-backup
+      property: aws_access_key_id
+  - secretKey: secretKey
+    remoteRef:
+      key: secret/aws-s3-backup
+      property: aws_secret_access_key
