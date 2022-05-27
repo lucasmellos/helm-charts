@@ -3,7 +3,17 @@ entries:
   external-secrets-provider:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-27T14:46:51.222337-03:00"
+    created: "2022-05-27T14:55:53.606802-03:00"
+    description: A helm abstraction to generate providers and stores for external-secrets
+    digest: 934f9f3a33f5d11bb6feb8c7619d9e97a65be2a370a2cc5f5dcc28b9979bb044
+    name: external-secrets-provider
+    type: application
+    urls:
+    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-0.3.2.tgz
+    version: 0.3.2
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-05-27T14:55:53.606485-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 96509eae4bad70bf83b5dbd9764d0b7639c3e97f64d06e7a3e416d9e60a98344
     name: external-secrets-provider
@@ -13,7 +23,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-27T14:46:51.221396-03:00"
+    created: "2022-05-27T14:55:53.606154-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 666437985c2c90a5d78239ea4ad3586c85a3aba7a966ce1077115ed61ce77449
     name: external-secrets-provider
@@ -23,7 +33,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-27T14:46:51.220501-03:00"
+    created: "2022-05-27T14:55:53.605561-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 8121b55b83b5474e7642274a3b134c2e4124f41049fe1d07f407addb2e72820e
     name: external-secrets-provider
@@ -33,7 +43,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-27T14:46:51.2196-03:00"
+    created: "2022-05-27T14:55:53.602831-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: ba6dd3ad19528415f8ad079c1bfbb7c855212af94488fc9829a1def17f674956
     name: external-secrets-provider
@@ -43,7 +53,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-27T14:46:51.218551-03:00"
+    created: "2022-05-27T14:55:53.601759-03:00"
     description: A helm abstraction to generate providers for external-secrets
     digest: a2c22d59a58fcf4c358f6ca6752c7cf7bc46401d8b94c985d7c3470d9113c52f
     name: external-secrets-provider
@@ -54,7 +64,7 @@ entries:
   istio-template:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-05-27T14:46:51.224087-03:00"
+    created: "2022-05-27T14:55:53.607486-03:00"
     description: A Helm chart that automates istio manifests
     digest: cfc9e3aac904ce89b2e57eb6095189315551144e3a854ba86cacf05fcd3a72f8
     name: istio-template
@@ -62,4 +72,4 @@ entries:
     urls:
     - https://lucasmellos.github.io/helm-charts/istio-template-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-27T14:46:51.207619-03:00"
+generated: "2022-05-27T14:55:53.600774-03:00"
