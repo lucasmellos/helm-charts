@@ -4,9 +4,6 @@ secretStore:
   vault:
     server: "https://vault.com:8200"
     path:
-    ca:
-      type: "Secret"
-      namespace: "my-ns"
     tokenSecretRef:
       name: "vault-token"
       key: "token"
@@ -20,6 +17,7 @@ externalSecret:
   targetName: "aws-credentials"
   remotePath: "secret/aws-s3-backup"
   remoteValue: "credentials"
+  kind: "ClusterSecretStore" # "SecretStore" 
   dataFrom: {}
   data: 
   - secretKey: accessKey
