@@ -3,7 +3,17 @@ entries:
   external-secrets-provider:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-27T14:17:09.461074-03:00"
+    created: "2022-05-27T14:38:34.449518-03:00"
+    description: A helm abstraction to generate providers and stores for external-secrets
+    digest: 8026c0d4c85d4ba0edf351e561fb938186596fdaffd285e3378d3dcea55891d4
+    name: external-secrets-provider
+    type: application
+    urls:
+    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-05-27T14:38:34.448202-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 666437985c2c90a5d78239ea4ad3586c85a3aba7a966ce1077115ed61ce77449
     name: external-secrets-provider
@@ -13,7 +23,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-27T14:17:09.460776-03:00"
+    created: "2022-05-27T14:38:34.446951-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 8121b55b83b5474e7642274a3b134c2e4124f41049fe1d07f407addb2e72820e
     name: external-secrets-provider
@@ -23,7 +33,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-27T14:17:09.460065-03:00"
+    created: "2022-05-27T14:38:34.44641-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: ba6dd3ad19528415f8ad079c1bfbb7c855212af94488fc9829a1def17f674956
     name: external-secrets-provider
@@ -33,7 +43,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-27T14:17:09.458767-03:00"
+    created: "2022-05-27T14:38:34.445946-03:00"
     description: A helm abstraction to generate providers for external-secrets
     digest: a2c22d59a58fcf4c358f6ca6752c7cf7bc46401d8b94c985d7c3470d9113c52f
     name: external-secrets-provider
@@ -44,7 +54,7 @@ entries:
   istio-template:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-05-27T14:17:09.462489-03:00"
+    created: "2022-05-27T14:38:34.451913-03:00"
     description: A Helm chart that automates istio manifests
     digest: cfc9e3aac904ce89b2e57eb6095189315551144e3a854ba86cacf05fcd3a72f8
     name: istio-template
@@ -52,4 +62,4 @@ entries:
     urls:
     - https://lucasmellos.github.io/helm-charts/istio-template-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-27T14:17:09.453229-03:00"
+generated: "2022-05-27T14:38:34.445287-03:00"
