@@ -4,6 +4,9 @@ secretStore:
   vault:
     server: "https://vault.com:8200"
     path:
+    ca:
+      type: "Secret"
+      namespace: "my-ns"
     tokenSecretRef:
       name: "vault-token"
       key: "token"
