@@ -1,8 +1,8 @@
 # Growthbook specific configs. 
 # Reference https://docs.growthbook.io/self-host/config
 growthbookConfig:
-  APP_ORIGIN: "http://localhost:3000"
-  API_HOST: "http://localhost:3100"
+  APP_ORIGIN: "https://growthbook-stg.swire.io"
+  API_HOST: "https://growthbook-stg.swire.io:8080"
 
 # Default values for growthbook-chart.
 # This is a YAML-formatted file.
@@ -24,7 +24,7 @@ fullnameOverride: ""
 # Reference https://github.com/bitnami/charts/tree/master/bitnami/mongodb
 mongodb:
   # mongodb.create -- Whenever you whant to deploy a new MongoDB instance
-  create: true
+  create: false
 
   auth:
     # auth.rootUser -- Setup MongoDB dependency root user
@@ -41,23 +41,25 @@ mongodb:
 
 
 # https://github.com/external-secrets/external-secrets
-externalSecrets:
+external-secrets-provider:
   # externalSecrets.enabled -- Get's external secrets using external Secrets provider
-  enabled: false
-  secrets: {}
-    # - name: "mongodb-credentials"
-    #   refreshInterval: "1m"
-    #   secretStoreName: "vault-externalsecrets-provider-backend"
-    #   targetName: "mongodb-credentials"
-    #   remotePath: "path/my-secret"
-    #   remoteValue: "credentials"
-    #   kind: "ClusterSecretStore" # "SecretStore" 
-    #   dataFrom: {}
-    #   data: 
-    #   - secretKey: MONGODB_URI
-    #     remoteRef:
-    #       key: path/my-secret
-    #       property: uri
+  enabled: true
+  externalSecret:
+    enabled: true
+    secrets: 
+      - name: "mongodb-credentials"
+        refreshInterval: "1m"
+        secretStoreName: "vault-externalsecrets-provider-backend"
+        targetName: "mongodb-credentials"
+        remotePath: "secret/growthbook"
+        remoteValue: "credentials"
+        kind: "ClusterSecretStore" # "SecretStore" 
+        dataFrom: {}
+        data: 
+        - secretKey: MONGODB_URI
+          remoteRef:
+            key: secret/growthbook
+            property: MONGODB_URI
 
 
 serviceAccount:
@@ -85,8 +87,8 @@ securityContext: {}
 service:
   type: ClusterIP
   ports: 
-  - 3000
-  - 3100
+  - 443
+  - 8080
 
 ingress:
   enabled: false
@@ -138,3 +140,6 @@ readinessProbe:
   httpGet:
     path: /
     port: http3000
+
+# external:
+#   enabled: true

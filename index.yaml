@@ -3,7 +3,7 @@ entries:
   external-secrets-provider:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-27T13:14:45.073281-03:00"
+    created: "2022-06-27T15:25:38.185502-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: ee78340d696aa46c4f50b4dea70131458682c31a198f61e1738819871b3caa7e
     name: external-secrets-provider
@@ -13,7 +13,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-27T13:14:45.073118-03:00"
+    created: "2022-06-27T15:25:38.185189-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: fe5e4dc255739f5940c24e4b6661ef35ae002c282193b7745776eae82d78025c
     name: external-secrets-provider
@@ -23,7 +23,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-27T13:14:45.086575-03:00"
+    created: "2022-06-27T15:25:38.20149-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: fe5e4dc255739f5940c24e4b6661ef35ae002c282193b7745776eae82d78025c
     name: external-secrets-provider
@@ -33,7 +33,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-27T13:14:45.0729-03:00"
+    created: "2022-06-27T15:25:38.184751-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: c06a4e67e20b8b54169cb5ec63aa9b252dab0e42c680c9d575c3cb860c5552cb
     name: external-secrets-provider
@@ -43,7 +43,7 @@ entries:
     version: 0.3.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-27T13:14:45.072753-03:00"
+    created: "2022-06-27T15:25:38.184348-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 96509eae4bad70bf83b5dbd9764d0b7639c3e97f64d06e7a3e416d9e60a98344
     name: external-secrets-provider
@@ -53,7 +53,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-27T13:14:45.072581-03:00"
+    created: "2022-06-27T15:25:38.184122-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 666437985c2c90a5d78239ea4ad3586c85a3aba7a966ce1077115ed61ce77449
     name: external-secrets-provider
@@ -63,7 +63,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-27T13:14:45.072405-03:00"
+    created: "2022-06-27T15:25:38.183865-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 8121b55b83b5474e7642274a3b134c2e4124f41049fe1d07f407addb2e72820e
     name: external-secrets-provider
@@ -73,7 +73,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-27T13:14:45.072237-03:00"
+    created: "2022-06-27T15:25:38.183608-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: ba6dd3ad19528415f8ad079c1bfbb7c855212af94488fc9829a1def17f674956
     name: external-secrets-provider
@@ -83,7 +83,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-27T13:14:45.072074-03:00"
+    created: "2022-06-27T15:25:38.183291-03:00"
     description: A helm abstraction to generate providers for external-secrets
     digest: a2c22d59a58fcf4c358f6ca6752c7cf7bc46401d8b94c985d7c3470d9113c52f
     name: external-secrets-provider
@@ -94,7 +94,7 @@ entries:
   growthbook-chart:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-06-27T13:14:45.086177-03:00"
+    created: "2022-06-27T15:25:38.200798-03:00"
     dependencies:
     - condition: mongodb.create
       name: mongodb
@@ -105,7 +105,7 @@ entries:
       repository: https://lucasmellos.github.io/helm-charts
       version: 1.0.1
     description: Growthbook helm chart for Kubernetes
-    digest: 3fa158e45a1a144495e2b96f72d4cc2e46daae2d7ca3526f7bff891936048626
+    digest: b62b4b56b678736e413931df57edc648a12f93a99e291c428db10256f4bb9454
     name: growthbook-chart
     type: application
     urls:
@@ -113,7 +113,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-06-27T13:14:45.081544-03:00"
+    created: "2022-06-27T15:25:38.195808-03:00"
     dependencies:
     - condition: mongo.create
       name: mongodb
@@ -132,7 +132,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-06-27T13:14:45.078201-03:00"
+    created: "2022-06-27T15:25:38.190326-03:00"
     dependencies:
     - condition: mongo.create
       name: mongodb
@@ -152,7 +152,7 @@ entries:
   istio-template:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-06-27T13:14:45.08639-03:00"
+    created: "2022-06-27T15:25:38.201127-03:00"
     description: A Helm chart that automates istio manifests
     digest: cfc9e3aac904ce89b2e57eb6095189315551144e3a854ba86cacf05fcd3a72f8
     name: istio-template
@@ -165,7 +165,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 5.0.9
-    created: "2022-06-27T13:14:45.089442-03:00"
+    created: "2022-06-27T15:25:38.204872-03:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -195,4 +195,4 @@ entries:
     urls:
     - https://lucasmellos.github.io/helm-charts/charts/mongodb-12.1.19.tgz
     version: 12.1.19
-generated: "2022-06-27T13:14:45.071841-03:00"
+generated: "2022-06-27T15:25:38.182844-03:00"

@@ -5,5 +5,5 @@ dependencies:
 - name: external-secrets-provider
   repository: https://lucasmellos.github.io/helm-charts
   version: 1.0.1
-digest: sha256:fe70ccd4513a6c29c287f46d7756368f9ac70dda584108102992f7d9c5c664fc
-generated: "2022-06-27T13:11:09.414763-03:00"
+digest: sha256:0fc932a98104171bfbf3c36697ff639cc793f4a73979b78f5ba5d7013144ee60
+generated: "2022-06-27T13:22:15.571471-03:00"

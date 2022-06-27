@@ -9,7 +9,7 @@ spec:
   ports:
     {{ range .Values.service.ports }}
     - port: {{ . }}
-      targetPort: http
+      targetPort: {{ . }}
       protocol: TCP
       name: "http-{{ . }}"
     {{ end }}
