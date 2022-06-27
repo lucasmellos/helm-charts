@@ -29,5 +29,5 @@ dependencies:
   version: "12.1.19"
 - name: external-secrets-provider
   version: "1.0.1"
-  condition: externalSecrets.enabled
+  condition: external-secrets-provider.enabled
   repository: "https://lucasmellos.github.io/helm-charts"
