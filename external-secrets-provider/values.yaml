@@ -10,35 +10,35 @@ secretStore:
       namespace: "my-ns"
 
 externalSecret:
-  enabled: true
-  secrets:
-    - name: "aws-credentials"
-      refreshInterval: "1m"
-      secretStoreName: "vault-externalsecrets-provider-backend"
-      targetName: "aws-credentials"
-      remotePath: "secret/aws-s3-backup"
-      remoteValue: "credentials"
-      kind: "ClusterSecretStore" # "SecretStore" 
-      dataFrom: {}
-      data: 
-      - secretKey: accessKey
-        remoteRef:
-          key: secret/aws-s3-backup
-          property: aws_access_key_id
-      - secretKey: secretKey
-        remoteRef:
-          key: secret/aws-s3-backup
-          property: aws_secret_access_key
-    - name: "rundeck-user-credentials-secret"
-      refreshInterval: "1m"
-      secretStoreName: "vault-externalsecrets-provider-backend"
-      targetName: "rundeck-user-credentials-secret"
-      remotePath: "secret/rundeck-user-credentials-secret"
-      remoteValue: "credentials"
-      kind: "ClusterSecretStore" # "SecretStore" 
-      dataFrom: {}
-      data: 
-      - secretKey: userCredentials
-        remoteRef:
-          key: secret/rundeck-user-credentials-secret
-          property: userCredentials
+  enabled: false
+  # secrets:
+  #   - name: "aws-credentials"
+  #     refreshInterval: "1m"
+  #     secretStoreName: "vault-externalsecrets-provider-backend"
+  #     targetName: "aws-credentials"
+  #     remotePath: "secret/aws-s3-backup"
+  #     remoteValue: "credentials"
+  #     kind: "ClusterSecretStore" # "SecretStore" 
+  #     dataFrom: {}
+  #     data: 
+  #     - secretKey: accessKey
+  #       remoteRef:
+  #         key: secret/aws-s3-backup
+  #         property: aws_access_key_id
+  #     - secretKey: secretKey
+  #       remoteRef:
+  #         key: secret/aws-s3-backup
+  #         property: aws_secret_access_key
+  #   - name: "rundeck-user-credentials-secret"
+  #     refreshInterval: "1m"
+  #     secretStoreName: "vault-externalsecrets-provider-backend"
+  #     targetName: "rundeck-user-credentials-secret"
+  #     remotePath: "secret/rundeck-user-credentials-secret"
+  #     remoteValue: "credentials"
+  #     kind: "ClusterSecretStore" # "SecretStore" 
+  #     dataFrom: {}
+  #     data: 
+  #     - secretKey: userCredentials
+  #       remoteRef:
+  #         key: secret/rundeck-user-credentials-secret
+  #         property: userCredentials
