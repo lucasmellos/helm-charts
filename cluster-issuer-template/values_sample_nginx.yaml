@@ -1,0 +1,11 @@
+
+namespace: l1-web-nginx
+
+email: me@mail.com
+
+acme:
+  server: https://acme-v02.api.letsencrypt.org/directory # https://acme-staging-v02.api.letsencrypt.org/directory
+
+http:
+  ingress:
+    class: nginx
