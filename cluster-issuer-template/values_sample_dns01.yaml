@@ -1,0 +1,23 @@
+namespace: istio-system
+
+email: mail@me.com
+
+acme:
+  server: https://acme-v02.api.letsencrypt.org/directory # https://acme-staging-v02.api.letsencrypt.org/directory
+
+
+challange:
+  type: dns01
+
+solver:
+  type: route53
+    
+config:
+  region: us-east-1
+  hostedZoneID: Z0159221358P96JYAUAA4
+
+selector:
+  enabled: true
+  type: dnsZones
+  configs:
+    - "heylucas.me"

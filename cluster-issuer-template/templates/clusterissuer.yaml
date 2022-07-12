@@ -11,6 +11,15 @@ spec:
     privateKeySecretRef:
       name: {{ .Release.Name }}-cluster-issuer
     solvers:
-    - http01:
-        ingress:
-          class: {{ .Values.http.ingress.class }}
+    - {{ .Values.challange.type }}:
+        {{ .Values.solver.type}}:
+        {{- range $k, $v := .Values.config }}
+          {{ $k }}: {{$v}}
+        {{- end }}
+    {{- if .Values.selector.enabled }}
+      selector:
+        {{ .Values.selector.type }}:
+        {{- range $v := .Values.selector.configs }}
+        - {{ $v }}
+        {{- end }}
+    {{- end }}
