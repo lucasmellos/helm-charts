@@ -3,7 +3,22 @@ entries:
   cluster-issuer-template:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-07-12T10:40:21.827853-03:00"
+    created: "2022-08-23T17:22:01.140661-03:00"
+    dependencies:
+    - condition: external-secrets-provider.enabled
+      name: external-secrets-provider
+      repository: https://lucasmellos.github.io/helm-charts
+      version: 0.3.2
+    description: A Helm chart that bootstraps cert-manager cluster issuer
+    digest: 9691a836013fd686934de5414d2866738ee2828997970f66a6ceea55bfae963d
+    name: cluster-issuer-template
+    type: application
+    urls:
+    - https://lucasmellos.github.io/helm-charts/cluster-issuer-template-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-08-23T17:22:01.140069-03:00"
     description: A Helm chart that bootstraps cert-manager cluster issuer
     digest: 9b44e18eb016a6d1f2ac5883678487809742327f931d7d023dfe10b7f04a95c3
     name: cluster-issuer-template
@@ -14,7 +29,7 @@ entries:
   external-secrets-provider:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-07-12T10:40:21.830663-03:00"
+    created: "2022-08-23T17:22:01.144757-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: ee78340d696aa46c4f50b4dea70131458682c31a198f61e1738819871b3caa7e
     name: external-secrets-provider
@@ -24,7 +39,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-07-12T10:40:21.83023-03:00"
+    created: "2022-08-23T17:22:01.144354-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: fe5e4dc255739f5940c24e4b6661ef35ae002c282193b7745776eae82d78025c
     name: external-secrets-provider
@@ -34,7 +49,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-07-12T10:40:21.847872-03:00"
+    created: "2022-08-23T17:22:01.15849-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: fe5e4dc255739f5940c24e4b6661ef35ae002c282193b7745776eae82d78025c
     name: external-secrets-provider
@@ -44,7 +59,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-07-12T10:40:21.829803-03:00"
+    created: "2022-08-23T17:22:01.142225-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: c06a4e67e20b8b54169cb5ec63aa9b252dab0e42c680c9d575c3cb860c5552cb
     name: external-secrets-provider
@@ -54,7 +69,7 @@ entries:
     version: 0.3.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-07-12T10:40:21.829445-03:00"
+    created: "2022-08-23T17:22:01.141919-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 96509eae4bad70bf83b5dbd9764d0b7639c3e97f64d06e7a3e416d9e60a98344
     name: external-secrets-provider
@@ -64,7 +79,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-07-12T10:40:21.829196-03:00"
+    created: "2022-08-23T17:22:01.141736-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 666437985c2c90a5d78239ea4ad3586c85a3aba7a966ce1077115ed61ce77449
     name: external-secrets-provider
@@ -74,7 +89,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-07-12T10:40:21.828954-03:00"
+    created: "2022-08-23T17:22:01.141552-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 8121b55b83b5474e7642274a3b134c2e4124f41049fe1d07f407addb2e72820e
     name: external-secrets-provider
@@ -84,7 +99,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-07-12T10:40:21.828685-03:00"
+    created: "2022-08-23T17:22:01.141321-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: ba6dd3ad19528415f8ad079c1bfbb7c855212af94488fc9829a1def17f674956
     name: external-secrets-provider
@@ -94,7 +109,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-07-12T10:40:21.828275-03:00"
+    created: "2022-08-23T17:22:01.141001-03:00"
     description: A helm abstraction to generate providers for external-secrets
     digest: a2c22d59a58fcf4c358f6ca6752c7cf7bc46401d8b94c985d7c3470d9113c52f
     name: external-secrets-provider
@@ -105,7 +120,7 @@ entries:
   growthbook-chart:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-07-12T10:40:21.847235-03:00"
+    created: "2022-08-23T17:22:01.157657-03:00"
     dependencies:
     - condition: mongodb.create
       name: mongodb
@@ -124,7 +139,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-07-12T10:40:21.841622-03:00"
+    created: "2022-08-23T17:22:01.153436-03:00"
     dependencies:
     - condition: mongo.create
       name: mongodb
@@ -143,7 +158,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-07-12T10:40:21.836728-03:00"
+    created: "2022-08-23T17:22:01.148837-03:00"
     dependencies:
     - condition: mongo.create
       name: mongodb
@@ -163,7 +178,7 @@ entries:
   istio-template:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-07-12T10:40:21.84751-03:00"
+    created: "2022-08-23T17:22:01.157923-03:00"
     description: A Helm chart that automates istio manifests
     digest: cfc9e3aac904ce89b2e57eb6095189315551144e3a854ba86cacf05fcd3a72f8
     name: istio-template
@@ -176,7 +191,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 5.0.9
-    created: "2022-07-12T10:40:21.852251-03:00"
+    created: "2022-08-23T17:22:01.16283-03:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -206,4 +221,15 @@ entries:
     urls:
     - https://lucasmellos.github.io/helm-charts/charts/mongodb-12.1.19.tgz
     version: 12.1.19
-generated: "2022-07-12T10:40:21.827487-03:00"
+  teleport-application:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-08-23T17:22:01.158086-03:00"
+    description: Teleport application bootstrap
+    digest: 5f0f19ebb288a02bebf98fe7688fa2969bea549fefb6b3f99816ebdacc1ad204
+    name: teleport-application
+    type: application
+    urls:
+    - https://lucasmellos.github.io/helm-charts/teleport-application-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-08-23T17:22:01.139565-03:00"
