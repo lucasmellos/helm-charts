@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "teleport-application.fullname" . }}-configmap
+  labels:
+    {{- include "teleport-application.labels" . | nindent 4 }}
+data:
+  teleport.yaml: |
+    teleport:
+      
+      data_dir: /var/lib/teleport-app
+      
+      auth_token: {{ .Values.token }}
+      
+      auth_servers:
+      - {{ .Values.authServer }}
+    app_service:
+      enabled: yes
+      debug_app: true
+      apps:
+      - name: {{ .Values.app.name }}
+        uri: {{ .Values.app.uri }}
+        public_addr: "grafana.teleport.example.com"
+        {{- if .Values.app.labels }}
+        labels:
+          {{- with .Values.app.labels }}
+          {{- toYaml . | nindent 12 }}
+          {{- end }}
+        {{- end }}
+        {{- if or (.Values.app.headers.enabled) (.Values.app.redirect.enabled) }}
+        rewrite:
+          {{- if .Values.app.redirect.enabled }}
+          redirect:
+          {{- with .Values.app.redirect.rules }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- end }}
+          {{- if .Values.app.headers.enabled }}
+          headers:
+          {{- with .Values.app.headers.rules }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- end }}
+        {{- end }}

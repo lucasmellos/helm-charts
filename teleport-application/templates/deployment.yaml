@@ -33,14 +33,19 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           command:
-          {{- with .Values.command }}
-          {{- toYaml . | nindent 10 }}
-          {{- end }}
+          - teleport
+          - start
+          - -c
+          - /etc/teleport.yaml
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          volumeMounts:
+          - name: {{ .Chart.Name}}
+            mountPath: /etc/teleport.yaml
+            subPath: teleport.yaml
           # livenessProbe:
           #   httpGet:
           #     path: /
@@ -63,3 +68,7 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      volumes:
+        - name: {{ .Chart.Name }}
+          configMap:
+            name: {{ include "teleport-application.fullname" . }}-configmap
