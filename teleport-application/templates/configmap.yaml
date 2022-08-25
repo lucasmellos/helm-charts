@@ -14,6 +14,12 @@ data:
       
       auth_servers:
       - {{ .Values.authServer }}
+    auth_service:
+      enabled: "no"
+    ssh_service:
+      enabled: "no"
+    proxy_service:
+      enabled: "no"
     app_service:
       enabled: yes
       debug_app: true
@@ -42,3 +48,9 @@ data:
           {{- end }}
           {{- end }}
         {{- end }}
+    auth_service:
+      enabled: "no"
+    ssh_service:
+      enabled: "no"
+    proxy_service:
+      enabled: "no"
