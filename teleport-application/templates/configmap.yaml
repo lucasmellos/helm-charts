@@ -48,9 +48,3 @@ data:
           {{- end }}
           {{- end }}
         {{- end }}
-    auth_service:
-      enabled: "no"
-    ssh_service:
-      enabled: "no"
-    proxy_service:
-      enabled: "no"
