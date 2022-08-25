@@ -24,24 +24,15 @@ serviceAccount:
   name: ""
 
 
-token: "test"
-authServer: localhost
+token: ""
+authServer: ""
 app:
-  name: test
-  uri: test.com
-  labels:
-    a: b
-    c: d
-  redirect:
-    enabled: true
-    rules:
-    - aaa
-    - bbb
-  headers:
-    enabled: true
-    rules:
-    - ccc
-    - ddd
+  name: ""
+  uri: ""
+  public_addr: ""
+  labels: {}
+  redirect: {}
+  headers: {}
 
 podAnnotations: {}
 

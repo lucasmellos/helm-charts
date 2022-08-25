@@ -26,7 +26,7 @@ data:
       apps:
       - name: {{ .Values.app.name }}
         uri: {{ .Values.app.uri }}
-        public_addr: "grafana.teleport.example.com"
+        public_addr: {{ .Values.app.public_addr }}
         {{- if .Values.app.labels }}
         labels:
           {{- with .Values.app.labels }}
