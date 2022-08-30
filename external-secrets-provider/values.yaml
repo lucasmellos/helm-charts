@@ -23,7 +23,7 @@ externalSecret:
     #   kind: "ClusterSecretStore" # "SecretStore" 
     #   dataFrom: {}
     #   data: 
-    #   - secretKey: accessKey
+    #   - secretKey: crt
     #     remoteRef:
     #       key: secret/aws-s3-backup
     #       property: aws_access_key_id
