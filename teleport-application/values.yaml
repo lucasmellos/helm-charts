@@ -34,6 +34,14 @@ app:
   redirect: {}
   headers: {}
 
+db:
+  enabled: false
+  name: ""
+  uri: ""
+  protocol: ""
+  labels: {}
+  static_labels: {}
+
 podAnnotations: {}
 
 podSecurityContext: {}

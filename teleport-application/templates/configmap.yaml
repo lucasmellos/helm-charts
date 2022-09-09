@@ -20,6 +20,7 @@ data:
       enabled: "no"
     proxy_service:
       enabled: "no"
+    {{- if .Values.app.enabled }}
     app_service:
       enabled: yes
       debug_app: true
@@ -48,3 +49,22 @@ data:
           {{- end }}
           {{- end }}
         {{- end }}
+    {{- end }}
+
+    {{- if .Values.db.enabled }}
+    db_service:
+      enabled: "yes"
+      resources:
+      - labels:
+          {{- with .Values.db.labels }}
+          {{- toYaml . | nindent 12 }}
+          {{- end }}
+      databases:
+      - name: {{ .Values.db.name }}
+        protocol: {{ .Values.db.protocol }}
+        uri: {{ .Values.db.uri }}
+        static_labels:
+        {{- with .Values.db.static_labels }}
+        {{- toYaml . | nindent 12 }}
+        {{- end }}
+    {{- end }}
