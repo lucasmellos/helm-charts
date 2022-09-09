@@ -52,7 +52,7 @@ data:
     {{- end }}
 
     {{- if .Values.db.enabled }}
-    db_service:
+    database_service:
       enabled: "yes"
       resources:
       - labels:
