@@ -35,7 +35,7 @@ app:
   headers: {}
 
 db:
-  enabled: false
+  enabled: true
   name: ""
   uri: ""
   protocol: ""
