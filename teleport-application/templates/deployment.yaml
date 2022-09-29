@@ -38,6 +38,11 @@ spec:
           - -c
           - /etc/teleport.yaml
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.db.gcp.enabled }}
+          env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: {{ "/cloudsql/instance/"}}{{ index .Values "external-secrets-provider" "externalSecret" "secrets" 1 "data" 0 "secretKey" }} 
+          {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
@@ -46,6 +51,14 @@ spec:
           - name: {{ .Chart.Name}}
             mountPath: /etc/teleport.yaml
             subPath: teleport.yaml
+          {{- if .Values.db.gcp.enabled }}
+          - name: gcp-certificate
+            mountPath: {{ "/cloudsql/instance/"}}{{ index .Values "external-secrets-provider" "externalSecret" "secrets" 0 "data" 0 "secretKey" }} 
+            subPath: {{ index .Values "external-secrets-provider" "externalSecret" "secrets" 0 "data" 0 "secretKey" }} 
+          - name: teleport-db-sa
+            mountPath: {{ "/cloudsql/instance/"}}{{ index .Values "external-secrets-provider" "externalSecret" "secrets" 1 "data" 0 "secretKey" }} 
+            subPath: {{ index .Values "external-secrets-provider" "externalSecret" "secrets" 1 "data" 0 "secretKey" }} 
+          {{- end }}
           # livenessProbe:
           #   httpGet:
           #     path: /
@@ -72,3 +85,11 @@ spec:
         - name: {{ .Chart.Name }}
           configMap:
             name: {{ include "teleport-application.fullname" . }}-configmap
+        {{- if .Values.db.gcp.enabled }}
+        - name: gcp-certificate
+          secret:
+            secretName: {{ index .Values "external-secrets-provider" "externalSecret" "secrets" 0 "targetName" }}
+        - name: teleport-db-sa
+          secret:
+            secretName: {{ index .Values "external-secrets-provider" "externalSecret" "secrets" 1 "targetName" }}
+        {{- end }}

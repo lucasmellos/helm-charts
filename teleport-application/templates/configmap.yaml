@@ -67,4 +67,13 @@ data:
         {{- with .Values.db.static_labels }}
         {{- toYaml . | nindent 12 }}
         {{- end }}
+        {{ if .Values.db.gcp.enabled }}
+        ca_cert_file: /cloudsql/instance/{{ index .Values "external-secrets-provider" "externalSecret" "secrets" 0 "data" 0 "secretKey" }} 
+        # GCP-specific configuration when connecting a Cloud SQL instance.
+        gcp:
+          # GCP project ID.
+          project_id: "{{ .Values.db.gcp.project_id }}"
+          # Cloud SQL instance ID.
+          instance_id: "{{ .Values.db.gcp.instance_id }}"
+        {{- end }}
     {{- end }}

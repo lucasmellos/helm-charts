@@ -12,7 +12,7 @@ image:
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "teleport-vault-app"
+fullnameOverride: "fsenterprise-licensing-db"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -35,12 +35,16 @@ app:
   headers: {}
 
 db:
-  enabled: true
+  enabled: false
   name: ""
   uri: ""
   protocol: ""
   labels: {}
   static_labels: {}
+  gcp:
+    enabled: false
+    project_id: ""
+    instance_id: ""
 
 podAnnotations: {}
 
@@ -58,7 +62,7 @@ securityContext:
 
 service:
   type: ClusterIP
-  port: 8200
+  port: 3306
 
 resources: 
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -84,3 +88,35 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+external-secrets-provider:
+  enabled: false
+  externalSecret:
+    enabled: true
+    secrets:
+      - name: "db-server-ca"
+        refreshInterval: "1h"
+        secretStoreName: "vault-externalsecrets-provider-backend"
+        targetName: "db-server-ca"
+        remotePath: "secret/db-prod-us-east1-fsenterprise-license-1"
+        remoteValue: "credentials"
+        kind: "ClusterSecretStore"
+        dataFrom: {}
+        data: 
+        - secretKey: data
+          remoteRef:
+            key: secret/db-prod-us-east1-fsenterprise-license-1
+            property: server.ca
+      - name: "db-gcp-sa"
+        refreshInterval: "1h"
+        secretStoreName: "vault-externalsecrets-provider-backend"
+        targetName: "db-gcp-sa"
+        remotePath: "secret/db-prod-us-east1-fsenterprise-license-1"
+        remoteValue: "credentials"
+        kind: "ClusterSecretStore"
+        dataFrom: {}
+        data: 
+        - secretKey: sa
+          remoteRef:
+            key: secret/db-prod-us-east1-fsenterprise-license-1
+            property: sa
