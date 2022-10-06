@@ -28,6 +28,7 @@ data:
       - name: {{ .Values.app.name }}
         uri: {{ .Values.app.uri }}
         public_addr: {{ .Values.app.public_addr }}
+        insecure_skip_verify: {{ .Values.app.skip_tls }}
         {{- if .Values.app.labels }}
         labels:
           {{- with .Values.app.labels }}
