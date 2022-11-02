@@ -1,46 +1,21 @@
 secretStore:
-  enabled: false
-  kind: "ClusterSecretStore"
+  kind: ClusterSecretStore
+  enabled: true
   vault:
-    server: "https://vault.com:8200"
-    path:
-    tokenSecretRef:
-      name: "vault-token"
-      key: "token"
-      namespace: "my-ns"
+    server: https://vault-internal.l1-web-vault:8200
+    path: secret
+    ca: 
+      enabled: true
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUdNVENDQkJtZ0F3SUJBZ0lVZm94ZU9HOUw2YkVmVUpGVDFEK3V5aFFkeGpBd0RRWUpLb1pJaHZjTkFRRUwKQlFBd2dhY3hDekFKQmdOVkJBWVRBbFZUTVJNd0VRWURWUVFJREFwRFlXeHBabTl5Ym1saE1SSXdFQVlEVlFRSApEQWxRWVd4dklFRnNkRzh4RnpBVkJnTlZCQW9NRGxOcFoyNWhiRmRwY21VZ1NXNWpNUk13RVFZRFZRUUxEQXB6CmFXZHVZV3gzYVhKbE1Sa3dGd1lEVlFRRERCQXFMblpoZFd4MExXbHVkR1Z5Ym1Gc01TWXdKQVlKS29aSWh2Y04KQVFrQkZoZHpaV04xY21sMGVVQnphV2R1WVd4M2FYSmxMbU52YlRBZUZ3MHlNakV3TURjeE5qQTVNemhhRncweQpOVEEzTWpjeE5qQTVNemhhTUlHbk1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQXdLUTJGc2FXWnZjbTVwCllURVNNQkFHQTFVRUJ3d0pVR0ZzYnlCQmJIUnZNUmN3RlFZRFZRUUtEQTVUYVdkdVlXeFhhWEpsSUVsdVl6RVQKTUJFR0ExVUVDd3dLYzJsbmJtRnNkMmx5WlRFWk1CY0dBMVVFQXd3UUtpNTJZWFZzZEMxcGJuUmxjbTVoYkRFbQpNQ1FHQ1NxR1NJYjNEUUVKQVJZWGMyVmpkWEpwZEhsQWMybG5ibUZzZDJseVpTNWpiMjB3Z2dJaU1BMEdDU3FHClNJYjNEUUVCQVFVQUE0SUNEd0F3Z2dJS0FvSUNBUUN4djZqaU1BWkJueW9wNkVXTDY1RGI1MWlSOUgxMFY2NWIKOVVkcVczWHU1cElkbGZ5K0NFMFUvdUdSb2hoSjAyajcxTjZ1M1NpQ0FOYXlBVVVRUFlCY1lCSmtnbkxsQWU3bQpWM1c0T3NHSnlZZU5vckYzL3lwY0hYTThENjNSMW05d3lQd2hUSkFBKzRpV2dGcXFlR3ZUaVQ2cFB6RWtQUEsyClFyYndhdFNNVjFFcnl6Y2MvMjBLY1J3ZC9hK1BKdmZhWEV0ekI0UDMzalVScGo4NzI0UHVtcUlCcWtLcjFmVkkKOE1XODJHZ3RlYmxndjJUTENaNlNTZW1rN082dUd1Y2tCYnUrRUJBcVB3RDBUbVBoLzF0bWNNbXZvY1FXdFNlNgpWTnJmTEFKVGxtMzVpa3lBblYzUVhIN3U1RC9NNnl0NTl2cVZIazBqamRYeG1BaGFCVGxIdS9KUkh3NFYraXFDCldFelRlWW1xdExLY0I3QkN0c2JoUU1jTjJHc1NkSEJVK2E2djhPanRBMlo2MTloMnBaajRHYWxXZWxBWFM4YkkKbWtGNktiNlJjU0svYW1xT2lKbXAxNEtZT0hSQXc1SnRIVm9GVk11eFdRT3FnYWhURW16azdJUkZYS3piV2JmMApNOXcvTlFUb2JxK3JEUGdmNUNDNnJRd0dSTXoxTzhlL2cwMEVieExEcDNLalhvMGhBZEdUcXRBNExDWUZIQzJMCm5Wbk1MZm0yTEFVbXRtUW9OODErazczK2JIanlEOU91VG10WUEzaHJ6cW10Snp3RzdOR0F2SmR3UUZKL2cvYzUKSU8yYkszWEMyNWNzYzM1T0swcnlTYjMybmYzTmN4aE5vZmVHUmJrZWJFb1hKU2VaUkJpZUFERlBrQVZXeHJRTgo2Kzd5VE1kRzl3SURBUUFCbzFNd1VUQWRCZ05WSFE0RUZnUVVoNE9HczNsS1FXRlVtakxZa1NkRkp3ZCt3TWt3Ckh3WURWUjBqQkJnd0ZvQVVoNE9HczNsS1FXRlVtakxZa1NkRkp3ZCt3TWt3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBTkJna3Foa2lHOXcwQkFRc0ZBQU9DQWdFQUY5dDF2R21ienYzV09NSVcyWU45VVV0U3dZRjY2bnNSVktNSQp1b3hTV2NlQWFBbUpXMlBPUUF6bVd2cFhVREF0WCtQVzBhMW45Zlc0T0R1RkVqZHhVQjliaHllQ214bGJJVzBvCm9wbGZLbnpMTTZ1YlFCZko4cDJUa0RFaVgwelV3bkFHckpHc05OdTdtY1hzSS9NNmNqUitEVzM1UStUcG5Fc08KN0o5ck1laGlnNHFTN3VqRlF2eWt0dnkrem53Q0J1T1VFVUd1dG0vUmlodFhHR0hTRmFqd0dnMlE5VnFtV1JYNAp3bWpjVElYYmY3d09pL0xNenhkdUN3Mm5QWUVlQ1RuU0hES2lmZnhJMjlRM1ZPbHRRb3JaQ3VydzMvU2ZNWEg0Cm5RQ0trTm5WSlM3MEdjc2tEaVZYS0VESnBoZ3pFK0NwcjN5Q1dPcklNaEN4SDJETE9yakt2ZDNuWWVBQWdSMU8KdGMySVFtZVo5ZjJpR0hpVW8rWllLVEVJYUJnc0xYcTFJbVYxZndyMU92NlhZbjhzL2lQYkNiS1cwKzJ1bjBOVgpUYytCbkh6OXF0TXNGbTFGekIyTnJGUEZQWU8vRWZVS0h2RFd3d1ZMcnZsdEMwVVpDSzY2NmRkTjNGbWU2ZFJECnBqaXBza1QzMnNSYkN4cThRVk9vNTJVK2s4dUYzNVBub3ZUNmZiLzhWOVJBdWpQbDBDcXdJdkVwVHV0Q216ZFEKbXBZcXhDeVZacHNrdDVqa1ZiMTB4QUFmeEs0UXRzSDNFaXJrbDZRRXB4S05uTUdhREJTWjgzSGFoTXlWcXVnZgoyU1Y5ZXEvQkM2NkI2LzM0NGs0MlRkWXV3TzkyMUJrejNnOHJlTy91WmltMjBsbzN6ekRKODNIaXNXVy9OOTRqClUvdkN0TTA9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+      caProvider:
+        key: vault-internal.pem
+        name: tls-pem
+        namespace: l1-web-vault
+        type: Secret
+      tokenSecretRef:
+        name: "vault-token"
+        key: "token"
+        namespace: "l3-sec-externalsecrets"
 
 externalSecret:
   enabled: false
-  secrets: []
-    # - name: "aws-credentials"
-    #   refreshInterval: "1m"
-    #   secretStoreName: "vault-externalsecrets-provider-backend"
-    #   targetName: "aws-credentials"
-    #   remotePath: "secret/aws-s3-backup"
-    #   tls:
-    #     enabled: true
-    #   remoteValue: "credentials"
-    #   kind: "ClusterSecretStore" # "SecretStore" 
-    #   dataFrom: {}
-    #   data: 
-    #   - secretKey: crt
-    #     remoteRef:
-    #       key: secret/aws-s3-backup
-    #       property: aws_access_key_id
-    #   - secretKey: secretKey
-    #     remoteRef:
-    #       key: secret/aws-s3-backup
-    #       property: aws_secret_access_key
-    # - name: "rundeck-user-credentials-secret"
-    #   refreshInterval: "1m"
-    #   secretStoreName: "vault-externalsecrets-provider-backend"
-    #   targetName: "rundeck-user-credentials-secret"
-    #   remotePath: "secret/rundeck-user-credentials-secret"
-    #   remoteValue: "credentials"
-    #   kind: "ClusterSecretStore" # "SecretStore" 
-    #   dataFrom: {}
-    #   data: 
-    #   - secretKey: userCredentials
-    #     remoteRef:
-    #       key: secret/rundeck-user-credentials-secret
-    #       property: userCredentials
