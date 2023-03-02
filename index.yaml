@@ -217,6 +217,16 @@ entries:
     version: 0.1.0
   istio-template:
   - apiVersion: v2
+    appVersion: 0.3.0
+    created: "2023-03-02T16:29:17.546464-03:00"
+    description: A Helm chart that automates istio manifests
+    digest: 9a22d5a5be15bb9b96405994d3a77b56222f4ba8bf93df93b40da3a8367208a5
+    name: istio-template
+    type: application
+    urls:
+    - https://github.com/lucasmellos/helm-charts/releases/download/istio-template-0.3.0/istio-template-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
     appVersion: 0.1.0
     created: "2022-11-02T17:01:39.323056-03:00"
     description: A Helm chart that automates istio manifests
@@ -261,6 +271,17 @@ entries:
     urls:
     - https://lucasmellos.github.io/helm-charts/charts/mongodb-12.1.19.tgz
     version: 12.1.19
+  prometheusrules:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-03-02T16:29:17.846991-03:00"
+    description: A Helm chart for Kubernetes
+    digest: 87112df12567e97103b75fe3807fae6cade886f9442cb2ad6ebc2f629fb9fc6c
+    name: prometheusrules
+    type: application
+    urls:
+    - https://github.com/lucasmellos/helm-charts/releases/download/prometheusrules-0.1.0/prometheusrules-0.1.0.tgz
+    version: 0.1.0
   teleport-application:
   - apiVersion: v2
     appVersion: 0.1.0
@@ -362,4 +383,4 @@ entries:
     urls:
     - https://lucasmellos.github.io/helm-charts/teleport-application-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-02T17:01:39.301043-03:00"
+generated: "2023-03-02T16:29:19.883036-03:00"
