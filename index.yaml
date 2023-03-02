@@ -3,7 +3,7 @@ entries:
   cluster-issuer-template:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-11-02T17:01:39.302214-03:00"
+    created: "2023-03-02T16:18:00.693947-03:00"
     dependencies:
     - condition: external-secrets-provider.enabled
       name: external-secrets-provider
@@ -14,82 +14,82 @@ entries:
     name: cluster-issuer-template
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/cluster-issuer-template-0.2.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/cluster-issuer-template-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-11-02T17:01:39.301679-03:00"
+    created: "2023-03-02T16:18:00.693544-03:00"
     description: A Helm chart that bootstraps cert-manager cluster issuer
     digest: 9b44e18eb016a6d1f2ac5883678487809742327f931d7d023dfe10b7f04a95c3
     name: cluster-issuer-template
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/cluster-issuer-template-0.1.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/cluster-issuer-template-0.1.0.tgz
     version: 0.1.0
   external-secrets-provider:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.307965-03:00"
+    created: "2023-03-02T16:18:00.697617-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 1fa1d742ceb0712870781108db8a552b21c0251a2f13793af9cea7902baea738
     name: external-secrets-provider
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-1.3.1.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/external-secrets-provider-1.3.1.tgz
     version: 1.3.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.307834-03:00"
+    created: "2023-03-02T16:18:00.69732-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: e429be59e61e5756f40f9aeb7a6d093a2ace0443586a556d8e64ba30c9d41f9e
     name: external-secrets-provider
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-1.3.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/external-secrets-provider-1.3.0.tgz
     version: 1.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.307453-03:00"
+    created: "2023-03-02T16:18:00.69693-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 58cffbc37af812132bacfad897eeedacb06767ffc75a18323c6f76e971a82ec8
     name: external-secrets-provider
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-1.2.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/external-secrets-provider-1.2.0.tgz
     version: 1.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.307137-03:00"
+    created: "2023-03-02T16:18:00.696609-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 96baecc526322fd962c70f13c4518a1a2186b0a94d2a5bcd8b133c391427e129
     name: external-secrets-provider
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-1.1.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/external-secrets-provider-1.1.0.tgz
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.306837-03:00"
+    created: "2023-03-02T16:18:00.69623-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: ee78340d696aa46c4f50b4dea70131458682c31a198f61e1738819871b3caa7e
     name: external-secrets-provider
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-1.0.1.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/external-secrets-provider-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.306366-03:00"
+    created: "2023-03-02T16:18:00.695923-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: fe5e4dc255739f5940c24e4b6661ef35ae002c282193b7745776eae82d78025c
     name: external-secrets-provider
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-1.0.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/external-secrets-provider-1.0.0.tgz
     version: 1.0.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.327922-03:00"
+    created: "2023-03-02T16:18:00.717332-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: fe5e4dc255739f5940c24e4b6661ef35ae002c282193b7745776eae82d78025c
     name: external-secrets-provider
@@ -99,68 +99,68 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.303772-03:00"
+    created: "2023-03-02T16:18:00.695502-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: c06a4e67e20b8b54169cb5ec63aa9b252dab0e42c680c9d575c3cb860c5552cb
     name: external-secrets-provider
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-0.3.2.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/external-secrets-provider-0.3.2.tgz
     version: 0.3.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.303444-03:00"
+    created: "2023-03-02T16:18:00.69516-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 96509eae4bad70bf83b5dbd9764d0b7639c3e97f64d06e7a3e416d9e60a98344
     name: external-secrets-provider
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-0.3.1.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/external-secrets-provider-0.3.1.tgz
     version: 0.3.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.303232-03:00"
+    created: "2023-03-02T16:18:00.694984-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 666437985c2c90a5d78239ea4ad3586c85a3aba7a966ce1077115ed61ce77449
     name: external-secrets-provider
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-0.3.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/external-secrets-provider-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.303011-03:00"
+    created: "2023-03-02T16:18:00.694801-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 8121b55b83b5474e7642274a3b134c2e4124f41049fe1d07f407addb2e72820e
     name: external-secrets-provider
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-0.2.1.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/external-secrets-provider-0.2.1.tgz
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.302802-03:00"
+    created: "2023-03-02T16:18:00.694429-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: ba6dd3ad19528415f8ad079c1bfbb7c855212af94488fc9829a1def17f674956
     name: external-secrets-provider
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-0.2.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/external-secrets-provider-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.302494-03:00"
+    created: "2023-03-02T16:18:00.694191-03:00"
     description: A helm abstraction to generate providers for external-secrets
     digest: a2c22d59a58fcf4c358f6ca6752c7cf7bc46401d8b94c985d7c3470d9113c52f
     name: external-secrets-provider
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-0.1.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/external-secrets-provider-0.1.0.tgz
     version: 0.1.0
   growthbook-chart:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-02T17:01:39.322777-03:00"
+    created: "2023-03-02T16:18:00.711158-03:00"
     dependencies:
     - condition: mongodb.create
       name: mongodb
@@ -175,11 +175,11 @@ entries:
     name: growthbook-chart
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/growthbook-chart-0.1.2.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/growthbook-chart-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-02T17:01:39.317773-03:00"
+    created: "2023-03-02T16:18:00.706932-03:00"
     dependencies:
     - condition: mongo.create
       name: mongodb
@@ -194,11 +194,11 @@ entries:
     name: growthbook-chart
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/growthbook-chart-0.1.1.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/growthbook-chart-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-02T17:01:39.312648-03:00"
+    created: "2023-03-02T16:18:00.703121-03:00"
     dependencies:
     - condition: mongo.create
       name: mongodb
@@ -213,7 +213,7 @@ entries:
     name: growthbook-chart
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/growthbook-chart-0.1.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/growthbook-chart-0.1.0.tgz
     version: 0.1.0
   istio-template:
   - apiVersion: v2
@@ -228,20 +228,20 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-02T17:01:39.323056-03:00"
+    created: "2023-03-02T16:18:00.711387-03:00"
     description: A Helm chart that automates istio manifests
     digest: cfc9e3aac904ce89b2e57eb6095189315551144e3a854ba86cacf05fcd3a72f8
     name: istio-template
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/istio-template-0.1.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/istio-template-0.1.0.tgz
     version: 0.1.0
   mongodb:
   - annotations:
       category: Database
     apiVersion: v2
     appVersion: 5.0.9
-    created: "2022-11-02T17:01:39.331169-03:00"
+    created: "2023-03-02T16:18:00.720362-03:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -285,7 +285,7 @@ entries:
   teleport-application:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-02T17:01:39.327583-03:00"
+    created: "2023-03-02T16:18:00.716991-03:00"
     dependencies:
     - condition: external-secrets-provider.enabled
       name: external-secrets-provider
@@ -296,11 +296,11 @@ entries:
     name: teleport-application
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/teleport-application-1.0.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/teleport-application-1.0.0.tgz
     version: 1.0.0
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-02T17:01:39.32692-03:00"
+    created: "2023-03-02T16:18:00.715154-03:00"
     dependencies:
     - condition: external-secrets-provider.enabled
       name: external-secrets-provider
@@ -311,76 +311,76 @@ entries:
     name: teleport-application
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/teleport-application-0.4.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/teleport-application-0.4.0.tgz
     version: 0.4.0
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-02T17:01:39.32624-03:00"
+    created: "2023-03-02T16:18:00.714639-03:00"
     description: Teleport application bootstrap
     digest: 0c02dcf8d102fcbb8f93e953cb828c8118aa1f7032c6488746686f5cf3834ac3
     name: teleport-application
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/teleport-application-0.3.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/teleport-application-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-02T17:01:39.325783-03:00"
+    created: "2023-03-02T16:18:00.714211-03:00"
     description: Teleport application bootstrap
     digest: 9f8e49eae00818d5911dfdefdced47211735d1309ff114e9c5e96a19732002d7
     name: teleport-application
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/teleport-application-0.2.3.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/teleport-application-0.2.3.tgz
     version: 0.2.3
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-02T17:01:39.325358-03:00"
+    created: "2023-03-02T16:18:00.713823-03:00"
     description: Teleport application bootstrap
     digest: 1f76963581bb2850989f801726a9fd32fa5d575d289458c0521726a56c7d9715
     name: teleport-application
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/teleport-application-0.2.2.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/teleport-application-0.2.2.tgz
     version: 0.2.2
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-02T17:01:39.32491-03:00"
+    created: "2023-03-02T16:18:00.713412-03:00"
     description: Teleport application bootstrap
     digest: e3d1ca51be88458cae223d51ccc8f1616597061390338faecf141fb7b3195056
     name: teleport-application
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/teleport-application-0.2.1.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/teleport-application-0.2.1.tgz
     version: 0.2.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-02T17:01:39.324436-03:00"
+    created: "2023-03-02T16:18:00.712986-03:00"
     description: Teleport application bootstrap
     digest: 63f76dd30b67be1c52ebda66904bb285407242a9ee93c9a39942240c9b98ce1a
     name: teleport-application
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/teleport-application-0.2.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/teleport-application-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-02T17:01:39.323932-03:00"
+    created: "2023-03-02T16:18:00.712549-03:00"
     description: Teleport application bootstrap
     digest: 43d872b70efa8bc64b1f0e2da07d953a5643af16129ea2901f1102781663ac06
     name: teleport-application
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/teleport-application-0.1.1.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/teleport-application-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-02T17:01:39.323449-03:00"
+    created: "2023-03-02T16:18:00.712129-03:00"
     description: Teleport application bootstrap
     digest: 5f0f19ebb288a02bebf98fe7688fa2969bea549fefb6b3f99816ebdacc1ad204
     name: teleport-application
     type: application
     urls:
-    - https://lucasmellos.github.io/helm-charts/teleport-application-0.1.0.tgz
+    - https://lucasmellos.github.io/helm-charts/.deploy/teleport-application-0.1.0.tgz
     version: 0.1.0
 generated: "2023-03-02T16:30:14.041132-03:00"
