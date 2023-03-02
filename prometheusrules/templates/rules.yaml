@@ -3,9 +3,9 @@
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
-  name: {{ template "prometheusrules.name" $ }}
+  name: {{ template "prometheusrules.name" $ }}-{{ $rules}}
   labels:
-    app: {{ template "prometheusrules.name" $ }}
+    app: {{ template "prometheusrules.name" $ }}-{{ $rules }}
 {{ include "prometheusrules.labels" $ | indent 4 }}
 spec:
   {{- $file := print "files/" $rules ".yaml"}}
