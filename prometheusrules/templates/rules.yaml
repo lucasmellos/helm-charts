@@ -1,0 +1,15 @@
+{{ range $rules := .Values.rules }}
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: {{ template "prometheusrules.name" $ }}
+  labels:
+    app: {{ template "prometheusrules.name" $ }}
+{{ include "prometheusrules.labels" $ | indent 4 }}
+spec:
+  {{- $file := print "files/" $rules ".yaml"}}
+  {{ range $lines := $.Files.Lines $file }}
+  {{  $lines }}
+  {{- end -}}
+{{- end -}}
