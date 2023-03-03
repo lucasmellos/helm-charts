@@ -314,6 +314,16 @@ entries:
   prometheusrules:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-03-03T15:15:16.555810984Z"
+    description: A Helm chart for Kubernetes
+    digest: d0fbe5edcbbe331787d723137e93a215a8142a9e9fd20377467a0ad590d7a2e6
+    name: prometheusrules
+    type: application
+    urls:
+    - https://github.com/lucasmellos/helm-charts/releases/download/prometheusrules-1.1.0/prometheusrules-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-03-02T21:48:17.02493892Z"
     description: A Helm chart for Kubernetes
     digest: a2a478f3864d23a268794c5edf85cdfb5fa5c9d395464a75df9c2c64595d57b6
@@ -443,4 +453,4 @@ entries:
     urls:
     - https://lucasmellos.github.io/helm-charts/teleport-application-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-03T14:06:26.675375907Z"
+generated: "2023-03-03T15:15:16.555937582Z"
