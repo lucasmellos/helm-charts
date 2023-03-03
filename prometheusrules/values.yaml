@@ -1,5 +1,8 @@
 rules:
   - redis
-  - istio
-  - thanos
-  - vault
+  # - istio
+  # - thanos
+  # - vault
+
+additionalLabels: {}
+  

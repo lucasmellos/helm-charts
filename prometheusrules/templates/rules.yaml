@@ -6,6 +6,9 @@ metadata:
   name: {{ template "prometheusrules.name" $ }}-{{ $rules}}
   labels:
     app: {{ template "prometheusrules.name" $ }}-{{ $rules }}
+    {{- range $k, $v := $.Values.additionalLabels }}
+    {{ $k }}: {{$v}}
+    {{- end }}
 {{ include "prometheusrules.labels" $ | indent 4 }}
 spec:
   {{- $file := print "files/" $rules ".yaml"}}
