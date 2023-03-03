@@ -1,19 +1,29 @@
 {{- if .Values.virtualservice.enabled }}
+{{- with .Values.virtualservice.rules }}
+{{- range . }}
+---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
+<<<<<<< Updated upstream
   name: {{ .Release.Name }}-vs
+=======
+  name: {{ .name }}-vs
+  namespace: {{ .namespace }}
+>>>>>>> Stashed changes
 spec:
   hosts:
-  {{- range .Values.hosts }}
+  {{- range .hosts }}
     - {{ . -}}
   {{ end }}
   gateways:
-    - istio-system/{{ .Release.Name }}-gw
-  {{ with .Values.virtualservice.http }}
+    - istio-system/{{ .gatewayName }}-gw
+  {{ with .http }}
   http: {{-  toYaml . | nindent 3 }} 
   {{- end }}
-  {{ with .Values.virtualservice.tls }}   
+  {{ with .tls }}   
   tls: {{-  toYaml . | nindent 3 }}
   {{- end }}
+{{- end }}
+{{- end }}
 {{- end }}

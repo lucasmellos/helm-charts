@@ -1,15 +1,17 @@
-{{- if .Values.tls.enabled }}
+{{- if .Values.gateway.enabled }}
+{{- with .Values.gateway.rules }}
+{{- range . }}
+{{- if .protocols.https.enabled }}
+---
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: {{ .Release.Name }}-tls
+  name: {{ .name }}-tls
   namespace: istio-system
-  labels:
-    {{- include "istio-template.labels" . | nindent 4 }}
 spec:
-  secretName: {{ .Release.Name }}-tls
-  duration: {{ .Values.tls.expiration }} 
-  renewBefore: {{ .Values.tls.renewBefore }} 
+  secretName: {{ .name }}-tls
+  duration: 2160h
+  renewBefore: 360h
   isCA: false
   privateKey:
     algorithm: RSA
@@ -19,11 +21,14 @@ spec:
     - server auth
     - client auth
   dnsNames:
-  {{- range .Values.tls.dnsNames }}
-    - {{ . -}}
+  {{- range .protocols.https.tls.dnsNames }}
+      - {{ . }}
   {{ end }}
   issuerRef:
-    name: {{ .Values.tls.issuerName }}
+    name: {{ .protocols.https.tls.issuerName }}
     kind: ClusterIssuer
     group: cert-manager.io
+{{- end }}
+{{- end }}
+{{- end }}
 {{- end }}

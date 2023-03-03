@@ -1,52 +1,94 @@
-hosts:
-  - mydns.com
-
-protocols:
-  http:
-    enabled: true
-    port: 80
-    httpsRedirect: true
-
-  https:
-    enabled: true
-    port: 443
-
-tls:
-  enabled: true
-  mode: SIMPLE
-  dnsNames: 
-  - mydns.com
-  issuerName: "letsencrypt-prod-cluster"
 
 destionationrule:
   enabled: false
 
-virtualservice:
-  enabled: true
-
-
 gateway:
-  enabled: true
+  enabled: false
+  rules:
+    - name: test
+      protocols:
+        http:
+          enabled: true
+          port: 80
+          httpsRedirect: true
+        https:
+          enabled: true
+          port: 443
+          tls:
+            mode: SIMPLE
+            dnsNames: 
+            - mydns.com
+            issuerName: "letsencrypt-prod-cluster"
+
+      hosts:
+      - mydns.com
+
 
 virtualservice:
+<<<<<<< Updated upstream
   enabled: true
+=======
+  enabled: false
+  rules:
+    - name: queryservice
+      gatewayName: signozqueryservice
+      hosts: 
+      - queryservice-stg-gcp.swire.io
+      namespace: "l1-web-signoz"
+>>>>>>> Stashed changes
 
-  http:
-  - match:
-      - uri:
-          prefix: /api
-    route:
-      - destination:
-          host: apiserver
-          port:
-            number: 80
-  - match:
-      - uri:
-          prefix: /
-    route:
-      - destination:
-          host: frontend
-          port:
-            number: 80
-    
-  tls: {}
+      http:
+      - match:
+          - uri:
+              prefix: /
+        route:
+          - destination:
+              host: signoz-query-service
+              port:
+                number: 8080
+      tls: {}
+    - name: frontend
+      gatewayName: signozmonitoring
+      hosts: 
+      - monitoring-stg-gcp.swiore.io
+      namespace: "l1-web-signoz"
+      http:
+      - match:
+          - uri:
+              prefix: /
+        route:
+          - destination:
+              host: signoz-frontend
+              port:
+                number: 3301
+      tls: {}
+    - name: alertmanager
+      gatewayName: signozalertmanager
+      hosts: 
+      - alertmanager-stg-gcp.swire.io
+      namespace: "l1-web-signoz"
+      http:
+      - match:
+          - uri:
+              prefix: /
+        route:
+          - destination:
+              host: signoz-alertmanager
+              port:
+                number: 9093
+      tls: {}
+    - name: otelcollector
+      gatewayName: signozotelcollector
+      hosts: 
+      - otelcollector-stg-gcp.swire.io
+      namespace: "l1-web-signoz"
+      http:
+      - match:
+          - uri:
+              prefix: /
+        route:
+          - destination:
+              host: signoz-otel-collector
+              port:
+                number: 4318
+      tls: {}

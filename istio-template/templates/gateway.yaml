@@ -1,38 +1,41 @@
 {{- if .Values.gateway.enabled }}
+{{- with .Values.gateway.rules }}
+{{- range . }}
+---
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: {{ .Release.Name }}-gw
+  name: {{ .name }}-gw
   namespace: istio-system
-  labels:
-    {{- include "istio-template.labels" . | nindent 4 }}
 spec:
   selector:
     istio: ingressgateway # use Istio default gateway implementation
   servers:
-  {{- if .Values.protocols.http.enabled }}
+  {{- if .protocols.http.enabled }}
     - port:
-        number: {{ .Values.protocols.http.port }}
+        number: {{ .protocols.http.port }}
         protocol: HTTP
         name: http
       hosts:
-      {{- range .Values.hosts }}
-        - {{ . -}}
+      {{- range .hosts }}
+        - {{ . }}
       {{ end }}
       tls:
-        httpsRedirect: {{ .Values.protocols.http.httpsRedirect }}
+        httpsRedirect: {{ .protocols.http.httpsRedirect }}
   {{- end }}
-  {{- if .Values.protocols.https.enabled }}
+  {{- if .protocols.https.enabled }}
     - port:
-        number: {{ .Values.protocols.https.port }}
+        number: {{ .protocols.https.port }}
         protocol: HTTPS
         name: https
       hosts:
-      {{- range .Values.hosts }}
+      {{- range .hosts }}
         - {{ . -}}
       {{ end }}
       tls:
-        mode: {{ .Values.tls.mode }}
-        credentialName: {{ .Release.Name }}-tls
+        mode: {{ .protocols.https.tls.mode }}
+        credentialName: {{ .name }}-tls
   {{- end }}
+{{- end }}
+{{- end }}
 {{- end }}
