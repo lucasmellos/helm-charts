@@ -25,9 +25,6 @@ gateway:
 
 
 virtualservice:
-<<<<<<< Updated upstream
-  enabled: true
-=======
   enabled: false
   rules:
     - name: queryservice
@@ -35,7 +32,6 @@ virtualservice:
       hosts: 
       - queryservice-stg-gcp.swire.io
       namespace: "l1-web-signoz"
->>>>>>> Stashed changes
 
       http:
       - match:
