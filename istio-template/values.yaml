@@ -6,6 +6,8 @@ gateway:
   enabled: false
   rules:
     - name: test
+      network:
+        internal: true
       protocols:
         http:
           enabled: true
@@ -27,11 +29,11 @@ gateway:
 virtualservice:
   enabled: false
   rules:
-    - name: queryservice
-      gatewayName: signozqueryservice
+    - name: test
+      gatewayName: test
       hosts: 
-      - queryservice-stg-gcp.swire.io
-      namespace: "l1-web-signoz"
+      - domain.com
+      namespace: "default"
 
       http:
       - match:
@@ -39,52 +41,7 @@ virtualservice:
               prefix: /
         route:
           - destination:
-              host: signoz-query-service
+              host: test
               port:
                 number: 8080
-      tls: {}
-    - name: frontend
-      gatewayName: signozmonitoring
-      hosts: 
-      - monitoring-stg-gcp.swiore.io
-      namespace: "l1-web-signoz"
-      http:
-      - match:
-          - uri:
-              prefix: /
-        route:
-          - destination:
-              host: signoz-frontend
-              port:
-                number: 3301
-      tls: {}
-    - name: alertmanager
-      gatewayName: signozalertmanager
-      hosts: 
-      - alertmanager-stg-gcp.swire.io
-      namespace: "l1-web-signoz"
-      http:
-      - match:
-          - uri:
-              prefix: /
-        route:
-          - destination:
-              host: signoz-alertmanager
-              port:
-                number: 9093
-      tls: {}
-    - name: otelcollector
-      gatewayName: signozotelcollector
-      hosts: 
-      - otelcollector-stg-gcp.swire.io
-      namespace: "l1-web-signoz"
-      http:
-      - match:
-          - uri:
-              prefix: /
-        route:
-          - destination:
-              host: signoz-otel-collector
-              port:
-                number: 4318
       tls: {}
