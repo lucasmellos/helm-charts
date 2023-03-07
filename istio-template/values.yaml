@@ -3,17 +3,20 @@ destionationrule:
   enabled: false
 
 gateway:
-  enabled: true
+  enabled: false
   rules:
     - name: test
       additionalSelector: {}
       protocols:
+        grpc:
+          enabled: false
+          port: 10901
         http:
-          enabled: true
+          enabled: false
           port: 80
-          httpsRedirect: true
+          httpsRedirect: false
         https:
-          enabled: true
+          enabled: false
           port: 443
           tls:
             mode: SIMPLE

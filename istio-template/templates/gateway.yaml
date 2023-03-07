@@ -14,6 +14,16 @@ spec:
     {{ toYaml . }}
   {{- end }}
   servers:
+  {{- if .protocols.grpc.enabled }}
+    - port:
+        number: {{ .protocols.grpc.port }}
+        protocol: GRPC
+        name: grpc
+      hosts:
+      {{- range .hosts }}
+        - {{ . }}
+      {{- end }}
+  {{- end }}
   {{- if .protocols.http.enabled }}
     - port:
         number: {{ .protocols.http.port }}
