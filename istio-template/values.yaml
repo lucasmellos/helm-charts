@@ -3,11 +3,10 @@ destionationrule:
   enabled: false
 
 gateway:
-  enabled: false
+  enabled: true
   rules:
     - name: test
-      network:
-        internal: true
+      additionalSelector: {}
       protocols:
         http:
           enabled: true

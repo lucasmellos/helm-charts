@@ -10,8 +10,8 @@ metadata:
 spec:
   selector:
     istio: ingressgateway # use Istio default gateway implementation
-  {{- if .network.internal }}
-    network: internal
+  {{- with .additionalSelector | default "" }}
+    {{ toYaml . }}
   {{- end }}
   servers:
   {{- if .protocols.http.enabled }}

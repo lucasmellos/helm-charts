@@ -3,4 +3,4 @@ appVersion: 5.15.0
 description: A Helm chart that automates istio manifests
 name: istio-template
 type: application
-version: 1.2.0
+version: 1.2.1
