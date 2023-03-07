@@ -218,6 +218,16 @@ entries:
   istio-template:
   - apiVersion: v2
     appVersion: 5.15.0
+    created: "2023-03-07T15:01:08.484136791Z"
+    description: A Helm chart that automates istio manifests
+    digest: de199526233d4649f56f84e47a8c601a53c70dddd2876a4d5b8a9b6f70c57465
+    name: istio-template
+    type: application
+    urls:
+    - https://github.com/lucasmellos/helm-charts/releases/download/istio-template-1.2.1/istio-template-1.2.1.tgz
+    version: 1.2.1
+  - apiVersion: v2
+    appVersion: 5.15.0
     created: "2023-03-07T14:47:04.011401116Z"
     description: A Helm chart that automates istio manifests
     digest: 352b5d348f46912759e5641c25988c3edc60bda154b6278acf215e27127f7dc1
@@ -463,4 +473,4 @@ entries:
     urls:
     - https://lucasmellos.github.io/helm-charts/teleport-application-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-07T14:47:04.011682217Z"
+generated: "2023-03-07T15:01:08.48433489Z"
