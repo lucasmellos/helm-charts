@@ -29,6 +29,16 @@ entries:
   external-secrets-provider:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-03-15T20:17:49.247433589Z"
+    description: A helm abstraction to generate providers and stores for external-secrets
+    digest: a338ac7126b953b7a1ca096bbe6aa2e620abcfc9f3ed9a55fa5fb0a736e5c904
+    name: external-secrets-provider
+    type: application
+    urls:
+    - https://github.com/lucasmellos/helm-charts/releases/download/external-secrets-provider-1.3.2/external-secrets-provider-1.3.2.tgz
+    version: 1.3.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-11-02T17:01:39.307965-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: 1fa1d742ceb0712870781108db8a552b21c0251a2f13793af9cea7902baea738
@@ -79,16 +89,6 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-02T17:01:39.306366-03:00"
-    description: A helm abstraction to generate providers and stores for external-secrets
-    digest: fe5e4dc255739f5940c24e4b6661ef35ae002c282193b7745776eae82d78025c
-    name: external-secrets-provider
-    type: application
-    urls:
-    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-1.0.0.tgz
-    version: 1.0.0
-  - apiVersion: v2
-    appVersion: 1.16.0
     created: "2022-11-02T17:01:39.327922-03:00"
     description: A helm abstraction to generate providers and stores for external-secrets
     digest: fe5e4dc255739f5940c24e4b6661ef35ae002c282193b7745776eae82d78025c
@@ -96,6 +96,16 @@ entries:
     type: application
     urls:
     - https://lucasmellos.github.io/helm-charts/charts/external-secrets-provider-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-11-02T17:01:39.306366-03:00"
+    description: A helm abstraction to generate providers and stores for external-secrets
+    digest: fe5e4dc255739f5940c24e4b6661ef35ae002c282193b7745776eae82d78025c
+    name: external-secrets-provider
+    type: application
+    urls:
+    - https://lucasmellos.github.io/helm-charts/external-secrets-provider-1.0.0.tgz
     version: 1.0.0
   - apiVersion: v2
     appVersion: 1.16.0
@@ -483,4 +493,4 @@ entries:
     urls:
     - https://lucasmellos.github.io/helm-charts/teleport-application-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-07T16:51:35.160640617Z"
+generated: "2023-03-15T20:17:49.24756639Z"
