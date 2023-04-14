@@ -28,7 +28,9 @@ jobs:
         uses: azure/setup-helm@v3
       
       - name: Add deps
-        run: helm repo add lucasmellos https://lucasmellos.github.io/helm-charts
+        run: |
+          helm repo add lucasmellos https://lucasmellos.github.io/helm-charts
+          helm repo add bitnami https://charts.bitnami.com/bitnami
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
