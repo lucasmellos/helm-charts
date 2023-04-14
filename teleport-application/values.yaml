@@ -8,7 +8,7 @@ image:
   repository: quay.io/gravitational/teleport
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "12.2.2"
+  tag: "12.2.3"
 
 imagePullSecrets: []
 nameOverride: ""
