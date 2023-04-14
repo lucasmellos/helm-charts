@@ -26,6 +26,9 @@ jobs:
 
       - name: Install Helm
         uses: azure/setup-helm@v3
+      
+      - name: Add deps
+        run: helm repo add lucasmellos https://lucasmellos.github.io/helm-charts
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
