@@ -1,5 +1,4 @@
-{{- if .Values.gateway.enabled }}
-{{- with .Values.gateway.rules }}
+{{- with .Values.gateway }}
 {{- range . }}
 ---
 apiVersion: networking.istio.io/v1alpha3
@@ -14,54 +13,6 @@ spec:
     {{ toYaml . }}
   {{- end }}
   servers:
-  {{- if .protocols.grpc.enabled }}
-    - port:
-        number: {{ .protocols.grpc.port }}
-        protocol: GRPC
-        name: grpc
-      hosts:
-      {{- range .hosts }}
-        - {{ . }}
-      {{- end }}
-  {{- end }}
-  {{- if .protocols.http.enabled }}
-    - port:
-        number: {{ .protocols.http.port }}
-        protocol: HTTP
-        name: http
-      hosts:
-      {{- range .hosts }}
-        - {{ . }}
-      {{- end }}
-      tls:
-        httpsRedirect: {{ .protocols.http.httpsRedirect }}
-  {{- end }}
-  {{- if .protocols.tcp.enabled }}
-    - port:
-        number: {{ .protocols.tcp.port }}
-        protocol: TCP
-        name: tcp
-      hosts:
-      {{- range .hosts }}
-        - {{ . -}}
-      {{ end }}
-      tls:
-        mode: {{ .protocols.tcp.tls.mode }}
-        credentialName: {{ .name }}-tls
-  {{- end }}
-  {{- if .protocols.https.enabled }}
-    - port:
-        number: {{ .protocols.https.port }}
-        protocol: HTTPS
-        name: https
-      hosts:
-      {{- range .hosts }}
-        - {{ . -}}
-      {{ end }}
-      tls:
-        mode: {{ .protocols.https.tls.mode }}
-        credentialName: {{ .name }}-tls
-  {{- end }}
-{{- end }}
+  {{-  toYaml .ports | nindent 3 }} 
 {{- end }}
 {{- end }}

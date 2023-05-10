@@ -2,48 +2,50 @@
 destionationrule:
   enabled: false
 
-gateway:
-  enabled: false
-  rules:
-    - name: test
-      additionalSelector: {}
-      protocols:
-        grpc:
-          enabled: false
-          port: 10901
-        http:
-          enabled: false
-          port: 80
-          httpsRedirect: false
-        https:
-          enabled: false
-          port: 443
-          tls:
-            mode: SIMPLE
-            dnsNames: 
-            - mydns.com
-            issuerName: "letsencrypt-prod-cluster"
+# gateway:
+#   - name: test
+#     additionalSelector: {}
+#     ports:
+#       - port: 
+#           name: grpc
+#           protocol: "grpc"
+#           number: 10901
+#           hosts:
+#           - mydns.com
+#       - port:
+#           name: tcp
+#           protocol: tcp
+#           number: 10901
+#           hosts:
+#           - mydns.com
+#           tls:
+#             mode: SIMPLE
+#             dnsNames: 
+#             - mydns.com
+#             issuerName: "my-issuer"
 
-      hosts:
-      - mydns.com
+      
+tls: {}
+  # - name: mytls
+  #   dnsNames: 
+  #   - mydomain.com
+  #   - mysecondomain.com
+  #   issuerName: my-issuer
 
+virtualservice: {}
+  # - name: test
+  #   gatewayName: test
+  #   hosts: 
+  #   - domain.com
+  #   namespace: "default"
 
-virtualservice:
-  enabled: false
-  rules:
-    - name: test
-      gatewayName: test
-      hosts: 
-      - domain.com
-      namespace: "default"
-
-      http:
-      - match:
-          - uri:
-              prefix: /
-        route:
-          - destination:
-              host: test
-              port:
-                number: 8080
-      tls: {}
+  #   http:
+  #   - match:
+  #       - uri:
+  #           prefix: /
+  #     route:
+  #       - destination:
+  #           host: test
+  #           port:
+  #             number: 8080
+  #   tls: {}

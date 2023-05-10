@@ -1,7 +1,5 @@
-{{- if .Values.gateway.enabled }}
-{{- with .Values.gateway.rules }}
+{{- with .Values.tls }}
 {{- range . }}
-{{- if or (eq .protocols.https.enabled true) (eq .protocols.tcp.enabled true)}}
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -21,14 +19,12 @@ spec:
     - server auth
     - client auth
   dnsNames:
-  {{- range .protocols.https.tls.dnsNames }}
-      - {{ . }}
+  {{- range .dnsNames }}
+      - {{ . -}}
   {{ end }}
   issuerRef:
-    name: {{ .protocols.https.tls.issuerName }}
+    name: {{ .issuerName }}
     kind: ClusterIssuer
     group: cert-manager.io
-{{- end }}
-{{- end }}
 {{- end }}
 {{- end }}
