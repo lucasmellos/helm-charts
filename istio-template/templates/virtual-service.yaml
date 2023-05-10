@@ -16,10 +16,10 @@ spec:
   {{ with .http }}
   http: {{-  toYaml . | nindent 3 }} 
   {{- end }}
-  {{ with .tls }}   
+  {{ with .tcp }}
   tcp: {{-  toYaml . | nindent 3 }} 
   {{- end }}
-  {{ with .tcp }}   
+  {{ with .tls }}   
   tls: {{-  toYaml . | nindent 3 }}
   {{- end }}
 {{- end }}
