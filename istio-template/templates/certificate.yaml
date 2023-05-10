@@ -1,7 +1,7 @@
 {{- if .Values.gateway.enabled }}
 {{- with .Values.gateway.rules }}
 {{- range . }}
-{{- if .protocols.https.enabled }}
+{{- if or (eq .protocols.https.enabled) (eq .protocols.tcp.enabled)}}
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate

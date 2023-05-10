@@ -36,6 +36,19 @@ spec:
       tls:
         httpsRedirect: {{ .protocols.http.httpsRedirect }}
   {{- end }}
+  {{- if .protocols.tcp.enabled }}
+    - port:
+        number: {{ .protocols.tcp.port }}
+        protocol: TCP
+        name: tcp
+      hosts:
+      {{- range .hosts }}
+        - {{ . -}}
+      {{ end }}
+      tls:
+        mode: {{ .protocols.tcp.tls.mode }}
+        credentialName: {{ .name }}-tls
+  {{- end }}
   {{- if .protocols.https.enabled }}
     - port:
         number: {{ .protocols.https.port }}
