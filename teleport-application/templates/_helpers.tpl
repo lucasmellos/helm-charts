@@ -60,3 +60,20 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Create app Labels
+*/}}
+{{- define "teleport-application.appLabels" -}}
+{{- with .Values.app.labels }}
+{{- toYaml . }}
+{{- end }}
+{{- end }}
+
+{{/*
+Create app name
+*/}}
+{{- define "teleport-application.appName" -}}
+{{- default "teleport" .Values.app.name }}
+{{- end }}
+

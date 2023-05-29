@@ -25,15 +25,13 @@ data:
       enabled: yes
       debug_app: true
       apps:
-      - name: {{ .Values.app.name }}
+      - name: {{ include "teleport-application.appName" . }}
         uri: {{ .Values.app.uri }}
         public_addr: {{ .Values.app.public_addr }}
         insecure_skip_verify: {{ .Values.app.skip_tls }}
         {{- if .Values.app.labels }}
         labels:
-          {{- with .Values.app.labels }}
-          {{- toYaml . | nindent 12 }}
-          {{- end }}
+          {{- include "teleport-application.appLabels" . | nindent 12 }}
         {{- end }}
         {{- if or (.Values.app.headers.enabled) (.Values.app.redirect.enabled) }}
         rewrite:
@@ -46,7 +44,7 @@ data:
           {{- if .Values.app.headers.enabled }}
           headers:
           {{- with .Values.app.headers.rules }}
-            {{- toYaml . | nindent 12 }}
+            {{- toYaml . | nindent 10 }}
           {{- end }}
           {{- end }}
         {{- end }}
