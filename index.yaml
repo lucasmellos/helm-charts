@@ -474,6 +474,21 @@ entries:
   teleport-application:
   - apiVersion: v2
     appVersion: 12.2.3
+    created: "2023-05-29T19:59:03.786073497Z"
+    dependencies:
+    - condition: external-secrets-provider.enabled
+      name: external-secrets-provider
+      repository: https://lucasmellos.github.io/helm-charts
+      version: 1.3.2
+    description: Teleport application bootstrap
+    digest: c5fe113bc6a5371d3aa682ea3504ccab312e4ddbdf6b754749b39e96289602b5
+    name: teleport-application
+    type: application
+    urls:
+    - https://github.com/lucasmellos/helm-charts/releases/download/teleport-application-1.3.3/teleport-application-1.3.3.tgz
+    version: 1.3.3
+  - apiVersion: v2
+    appVersion: 12.2.3
     created: "2023-04-14T17:35:51.770852868Z"
     dependencies:
     - condition: external-secrets-provider.enabled
@@ -587,4 +602,4 @@ entries:
     urls:
     - https://lucasmellos.github.io/helm-charts/teleport-application-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-10T19:14:24.821755303Z"
+generated: "2023-05-29T19:59:03.786392002Z"
