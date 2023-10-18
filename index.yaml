@@ -484,6 +484,16 @@ entries:
   teleport-application:
   - apiVersion: v2
     appVersion: 12.2.3
+    created: "2023-10-18T17:30:54.182686007Z"
+    description: Teleport application bootstrap
+    digest: e1f06d640970a5c1a773884822ed81c1eaa794134c096248c7e2ccd2af8dcd93
+    name: teleport-application
+    type: application
+    urls:
+    - https://github.com/lucasmellos/helm-charts/releases/download/teleport-application-1.4.2/teleport-application-1.4.2.tgz
+    version: 1.4.2
+  - apiVersion: v2
+    appVersion: 12.2.3
     created: "2023-10-18T17:20:42.553141363Z"
     description: Teleport application bootstrap
     digest: 02e0858c1512a1e4c286d49dca162283b8b6ded3d0f7dddea4f9971451896e6b
@@ -632,4 +642,4 @@ entries:
     urls:
     - https://lucasmellos.github.io/helm-charts/teleport-application-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-18T17:20:42.553310265Z"
+generated: "2023-10-18T17:30:54.182942109Z"
