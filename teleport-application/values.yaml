@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: quay.io/gravitational/teleport
+  repository: public.ecr.aws.com/gravitational/teleport
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "12.2.3"
+  tag: "14.0.2"
 
 imagePullSecrets: []
 nameOverride: ""
