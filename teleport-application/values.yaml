@@ -91,8 +91,3 @@ tolerations: []
 
 affinity: {}
 
-external-secrets-provider:
-  enabled: false
-  externalSecret:
-    enabled: true
-    secrets: []
