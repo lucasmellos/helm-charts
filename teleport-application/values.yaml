@@ -8,7 +8,7 @@ image:
   repository: public.ecr.aws.com/gravitational/teleport
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "14.0.2"
+  tag: "14.1.0"
 
 imagePullSecrets: []
 nameOverride: ""
