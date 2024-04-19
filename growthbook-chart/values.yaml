@@ -3,6 +3,7 @@
 growthbookConfig:
   APP_ORIGIN: "https://growthbook-stg.swire.io"
   API_HOST: "https://growthbook-stg.swire.io:8080"
+  NODE_ENV: "production"
 
 # Default values for growthbook-chart.
 # This is a YAML-formatted file.
@@ -19,6 +20,19 @@ image:
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
+
+# https://docs.growthbook.io/self-host/env#production-settings
+# secrete realted properteis for production deployment 
+# JWT_SECRET - Auth signing key (use a long random string)
+# ENCRYPTION_KEY - Data source credential encryption key (use a long random string)
+
+serect: 
+  jwt:
+    secretName: jwtsecretname
+    secretKeyName: jwtsecretkeyname
+  encryption:
+    secretName: encryptionsecretname
+    secretKeyName: encryptionsecretkeyname
 
 # MongoDB database configs for Growthbook
 # Reference https://github.com/bitnami/charts/tree/master/bitnami/mongodb
@@ -87,8 +101,8 @@ securityContext: {}
 service:
   type: ClusterIP
   ports: 
-  - 443
-  - 8080
+  - 3000
+  - 3100
 
 ingress:
   enabled: false
@@ -134,12 +148,14 @@ affinity: {}
 livenessProbe:
   httpGet:
     path: /
-    port: http3000
+    port: 3000
+    scheme: HTTP
 
 readinessProbe:
   httpGet:
     path: /
-    port: http3000
+    port: 3000
+    scheme: HTTP
 
 # external:
 #   enabled: true

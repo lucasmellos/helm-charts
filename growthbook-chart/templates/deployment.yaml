@@ -43,6 +43,16 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.mongodb.secretName }}
                   key: {{ .Values.mongodb.secretKeyName }}
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.serect.jwt.secretName }}
+                  key: {{ .Values.serect.jwt.secretKeyName }}
+            - name: ENCRYPTION_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.serect.encryption.secretName }}
+                  key: {{ .Values.serect.encryption.secretKeyName }}
           ports:
           {{- range .Values.service.ports }}
             - name: "http{{ . }}"
