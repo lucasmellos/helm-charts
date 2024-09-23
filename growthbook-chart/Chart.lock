@@ -1,9 +1,9 @@
 dependencies:
 - name: mongodb
   repository: https://charts.bitnami.com/bitnami
-  version: 13.9.4
+  version: 15.6.26
 - name: external-secrets-provider
   repository: https://lucasmellos.github.io/helm-charts
   version: 1.3.2
-digest: sha256:06e25d81324d9d763c14ff515a63e3081c62cf9c108456744d36d5690b98885d
-generated: "2023-04-05T23:43:27.500794589Z"
+digest: sha256:b2d6423e5088e1f943a9993a62728a2cf49bbd9ca2296722190e01c06eef3a3a
+generated: "2024-09-23T11:07:33.589264213Z"
